@@ -1,0 +1,2 @@
+# filepath: C:\Users\law26\Desktop\VoiceCloningProject\fairseq\fairseq\config\criterion\cross_entropy.yaml
+_target_: fairseq.criterions.cross_entropy.CrossEntropyCriterion
