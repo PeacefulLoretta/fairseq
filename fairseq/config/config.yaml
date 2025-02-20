@@ -73,34 +73,33 @@ distributed_training:
   distributed_port: 55498
   device_id: 0
   distributed_no_spawn: True
-  ddp_backend: 'no_c10d'
-  ddp_comm_hook: 'none'
-  bucket_cap_mb: 25
-  fix_batches_to_gpus: False
-  find_unused_parameters: True
-  gradient_as_bucket_view: False
-  fast_stat_sync: False
-  heartbeat_timeout: -1
-  broadcast_buffers: False
-  slowmo_momentum: null
-  slowmo_base_algorithm: 'localsgd'
-  localsgd_frequency: 3
-  nprocs_per_node: 8
-  pipeline_model_parallel: False
-  pipeline_balance: null
-  pipeline_devices: null
-  pipeline_chunks: 0
-  pipeline_encoder_balance: null
-  pipeline_encoder_devices: null
-  pipeline_decoder_balance: null
-  pipeline_decoder_devices: null
-  pipeline_checkpoint: 'never'
-  zero_sharding: 'none'
-  fp16: True
-  memory_efficient_fp16: False
-  tpu: False
-  no_reshard_after_forward: False
-  fp32_reduce_scatter: False
-  cpu_offload: False
-  use_sharded_state: False
   not_fsdp_flatten_parameters: False
+
+dataset:
+  num_workers: 6
+  skip_invalid_size_inputs_valid_test: True
+  max_tokens: 1400000
+  batch_size: null
+  required_batch_size_multiple: 8
+  required_seq_len_multiple: 1
+  dataset_impl: null
+  data_buffer_size: 10
+  train_subset: 'train'
+  valid_subset: 'valid'
+  combine_valid_subsets: null
+  ignore_unused_valid_subsets: False
+  validate_interval: 5
+  validate_interval_updates: 10000
+  validate_after_updates: 0
+  fixed_validation_seed: null
+  disable_validation: False
+  max_tokens_valid: 1400000
+  batch_size_valid: '${dataset.batch_size}'
+  max_valid_steps: null
+  curriculum: 0
+  gen_subset: 'test'
+  num_shards: 1
+  shard_id: 0
+  grouped_shuffling: False
+  update_epoch_batch_itr: True
+  update_ordered_indices_seed: False
