@@ -1,3 +1,4 @@
+# filepath: C:\Users\law26\Desktop\VoiceCloningProject\fairseq\fairseq\config\config.yaml
 # @package _group_
 
 hydra:
@@ -63,17 +64,6 @@ common_eval:
   quiet: False
   model_overrides: '{}'
   results_path: null
-
-distributed_training:
-  distributed_world_size: 32
-  distributed_num_procs: 1
-  distributed_rank: 0
-  distributed_backend: 'nccl'
-  distributed_init_method: 'tcp://learnfair1408:55498'
-  distributed_port: 55498
-  device_id: 0
-  distributed_no_spawn: True
-  not_fsdp_flatten_parameters: False
 
 dataset:
   num_workers: 6
